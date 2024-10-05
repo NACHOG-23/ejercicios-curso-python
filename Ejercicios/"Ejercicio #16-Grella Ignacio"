@@ -1,0 +1,22 @@
+cad=str(input()).upper()
+cad+='X'
+espacios=0
+j=0
+lugmax=0
+libres=['']*(len(cad)//2)
+for i in range(len(cad)):
+    if cad[i]=='X':
+        libres[espacios]=cad[j:i]
+        j=i+1
+        espacios+=1
+print(espacios)
+for i in range(espacios):
+    print(libres[i])
+    if i<(espacios-1):
+        lugares=(len(libres[i])-1)//2
+    else:
+        lugares=len(libres[i])-1
+    if lugares>lugmax:
+        lugmax=lugares
+    print(lugares)
+print(lugmax)
